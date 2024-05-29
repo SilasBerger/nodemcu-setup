@@ -12,9 +12,9 @@ Setup instructions, scripts and helper files for ESP32 NodeMCU development board
 ## Board inventory for Micropython firmware
 _For diagrams (such as pinout, etc.), see `diagrams/device_<deviceNr>`._
 
-| Nr. | Name                                                                                                                    | SoC      | Link                                                                                                                              | Firmware                                           |
-|-----|-------------------------------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| 1   | ESP32 C3 / RP2040 Raspberry Pi Pico Development Board With 0.42 Inch LCD Risc-v WiFi Bluetooth for Arduino Microprython | ESP32 C3 | https://www.aliexpress.com/item/1005006051061995.html?spm=a2g0o.order_list.order_list_main.23.35c85c5f624Po0&gatewayAdapt=glo2deu | https://micropython.org/download/ESP32_GENERIC_C3/ |
+| Nr. | Name                                                                                                                    | SoC      | Link                                                                                                                              |
+|-----|-------------------------------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------|
+| 1   | ESP32 C3 / RP2040 Raspberry Pi Pico Development Board With 0.42 Inch LCD Risc-v WiFi Bluetooth for Arduino Microprython | ESP32 C3 | https://www.aliexpress.com/item/1005006051061995.html?spm=a2g0o.order_list.order_list_main.23.35c85c5f624Po0&gatewayAdapt=glo2deu |
 
 ## Flashing firmware
 First, you need to determine the correct USB device on which the ESP32 is connected. Run this command as a starting point:
@@ -35,13 +35,25 @@ Then, connect to the ESP32 device as follows: `picocom -b 115200 /dev/tty.usbmod
 
 Now you are in the Micropython REPL.
 
+## Working with files
+List files on device:
+```shell
+./ampy.py -p /dev/tty.usbmodem1101 ls
+```
+
+Upload a `main.py` file:
+```shell
+./ampy.py -p /dev/tty.usbmodem1101 ls
+```
+
+_Note that the variables defined in this script will also be available globally in the REPL._
+
 ## ESP32 Micropython essentials
 For more, see https://docs.micropython.org/en/latest/esp32/quickref.html.
 
 ### Networks
 ```python
 import network
-
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 wlan.scan()
