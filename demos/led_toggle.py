@@ -1,4 +1,4 @@
-# Connect LED Pin 8 + GND. Press the boot button to toggle the LED on and off.
+# Connect LED to pin 8 + GND. Press the boot button to toggle the LED on and off.
 from machine import Pin
 
 led_on = True

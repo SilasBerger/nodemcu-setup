@@ -65,3 +65,8 @@ from machine import Pin
 pin8 = Pin(8, Pin.OUT)
 pin8.on()
 ```
+
+## Demo files
+The `demos` directory contains some demo scripts that can be uploaded to the device (see [Working with files](#working-with-files)).
+
+**Note:** Some demos may be specific to a particular devleopment board; especially with respect to the pin layout.
