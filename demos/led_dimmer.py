@@ -1,3 +1,5 @@
+# Connect LED to pin 8 + GND. Press the boot button to toggle between the different dimming steps.
+
 import time
 from machine import Pin, PWM
 
