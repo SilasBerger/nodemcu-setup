@@ -2,10 +2,9 @@
 from machine import Pin
 
 led_on = True
-button_press_registered = False
 
 led = Pin(8, Pin.OUT)
-button = Pin(9, Pin.IN)
+
 
 def write_led():
     if led_on:
@@ -13,13 +12,13 @@ def write_led():
     else:
         led.off()
 
-write_led()
 
-while(True):
-    if button.value() == 0:
-        if not button_press_registered:
-            button_press_registered = True
-            led_on = not led_on
-            write_led()
-    elif button_press_registered:
-        button_press_registered = False
+def handle_button_interrupt(_):
+    global led_on
+    led_on = not led_on
+    write_led()
+
+
+write_led()
+button = Pin(9, Pin.IN)
+button.irq(trigger=Pin.IRQ_RISING, handler=handle_button_interrupt)
