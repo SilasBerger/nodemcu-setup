@@ -7,7 +7,7 @@ Setup instructions, scripts and helper files for ESP32 NodeMCU development board
 - `pip install -r requirements.txt`
 - `python esptool.py --help`
 - `chmod +x ./download_firmwares.sh && ./download_firmwares.sh`
-- `chmod +x setup_scripts/*`
+- `chmod +x setup_scripts/* command_generator.sh`
 
 ## Board inventory for Micropython firmware
 _For diagrams (such as pinout, etc.), see `diagrams/device_<deviceNr>`._
@@ -18,36 +18,27 @@ _For diagrams (such as pinout, etc.), see `diagrams/device_<deviceNr>`._
 | 2   | LILYGO TTGO LORA32                                                                                                      | ESP32    | https://micropython.org/download/LILYGO_TTGO_LORA32/ | https://www.aliexpress.com/item/1005003088139358.html |
 
 ## Flashing firmware
-First, you need to determine the correct USB device on which the ESP32 is connected. Run this command as a starting point:
-```shell
-ls /dev | grep usb
-```
+Determine the appropriate setup script for your chip / board. Use the above board inventory for assistance.
 
-Then, you need to run the appropriate setup script (e.g. `setup_scripts/esp32_c3_v1.22.2.sh`) with the `USB_DEV` environment variable set to the device value from the previous step. **Note:** this command needs to be run from the repository root!
+Then Execute the appropriate setup script (e.g. `setup_scripts/esp32_c3_v1.22.2.sh`) from the **repository root**.
 
 ```shell
-USB_DEV=tty.usbmodem1101 setup_scripts/esp32_c3_v1.22.2.sh
+setup_scripts/esp32_c3_v1.22.2.sh
 ```
 
-## REPL
-Make sure the `picocom` command line utility is installed, e.g.: `brew install picocom`. 
+## Serial connections: REPL and file transfer
+Run 
 
-Then, connect to the ESP32 device as follows: `picocom -b 115200 /dev/tty.usbmodem1101` (replace `tty.usbmodem1101` with the appropriate USB device if needed).
-
-Now you are in the Micropython REPL.
-
-## Working with files
-List files on device:
 ```shell
-./ampy.py -p /dev/tty.usbmodem1101 ls
+./command-generator.py
 ```
 
-Upload a `main.py` file:
-```shell
-./ampy.py -p /dev/tty.usbmodem1101 ls
-```
+to get a list of useful commands for connecting to the device's REPL or transferring files, tailored to the serial port that your device is most likely connected to. Use and customize these commands as you see fit.
 
-_Note that the variables defined in this script will also be available globally in the REPL._
+Here are some usage examples where the port happens to be `/dev/tty.usbmodem1101`:
+- Entering a Micropython REPL: `python -m serial.tools.miniterm /dev/tty.usbmodem1101`
+- List all files in the device's flash memory: `./ampy.py -p /dev/tty.usbmodem1101 ls`
+- Upload a `main.py` file: `./ampy.py -p /dev/tty.usbmodem1101 demos/hello_world.py main.py`
 
 ## ESP32 Micropython essentials
 For more, see https://docs.micropython.org/en/latest/esp32/quickref.html.
