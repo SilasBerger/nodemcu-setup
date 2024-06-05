@@ -11,9 +11,7 @@
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="EXECUTE_IN_TERMINAL" value="true" />
     <option name="EXECUTE_SCRIPT_FILE" value="true" />
-    <envs>
-      <env name="USB_DEV" value="tty.usbmodem1101" />
-    </envs>
+    <envs />
     <method v="2" />
   </configuration>
 </component>
