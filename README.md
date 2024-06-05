@@ -12,9 +12,10 @@ Setup instructions, scripts and helper files for ESP32 NodeMCU development board
 ## Board inventory for Micropython firmware
 _For diagrams (such as pinout, etc.), see `diagrams/device_<deviceNr>`._
 
-| Nr. | Name                                                                                                                    | SoC      | Link                                                                                                                              |
-|-----|-------------------------------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1   | ESP32 C3 / RP2040 Raspberry Pi Pico Development Board With 0.42 Inch LCD Risc-v WiFi Bluetooth for Arduino Microprython | ESP32 C3 | https://www.aliexpress.com/item/1005006051061995.html?spm=a2g0o.order_list.order_list_main.23.35c85c5f624Po0&gatewayAdapt=glo2deu |
+| Nr. | Name                                                                                                                    | SoC      | Micropython Firmware                                 | Link                                                  |
+|-----|-------------------------------------------------------------------------------------------------------------------------|----------|------------------------------------------------------|-------------------------------------------------------|
+| 1   | ESP32 C3 / RP2040 Raspberry Pi Pico Development Board With 0.42 Inch LCD Risc-v WiFi Bluetooth for Arduino Microprython | ESP32 C3 | https://micropython.org/download/ESP32_GENERIC_C3/   | https://www.aliexpress.com/item/1005006051061995.html |
+| 2   | LILYGO TTGO LORA32                                                                                                      | ESP32    | https://micropython.org/download/LILYGO_TTGO_LORA32/ | https://www.aliexpress.com/item/1005003088139358.html |
 
 ## Flashing firmware
 First, you need to determine the correct USB device on which the ESP32 is connected. Run this command as a starting point:
