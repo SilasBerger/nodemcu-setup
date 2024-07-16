@@ -4,7 +4,7 @@
 from machine import Pin, PWM
 
 
-SERVO_PIN = 8
+SERVO_PIN = 22
 PWM_FREQ = 50  # Typically, 40-4000 Hz; higher frequencies lead to faster but less precise movements
 PULSE_RANGE_MIN_US = 500
 PULSE_RANGE_MAX_US = 2500

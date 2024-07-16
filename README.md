@@ -16,6 +16,7 @@ _For diagrams (such as pinout, etc.), see `diagrams/device_<deviceNr>`._
 |-----|-------------------------------------------------------------------------------------------------------------------------|----------|------------------------------------------------------|-------------------------------------------------------|
 | 1   | ESP32 C3 / RP2040 Raspberry Pi Pico Development Board With 0.42 Inch LCD Risc-v WiFi Bluetooth for Arduino Microprython | ESP32 C3 | https://micropython.org/download/ESP32_GENERIC_C3/   | https://www.aliexpress.com/item/1005006051061995.html |
 | 2   | LILYGO TTGO LORA32                                                                                                      | ESP32    | https://micropython.org/download/LILYGO_TTGO_LORA32/ | https://www.aliexpress.com/item/1005003088139358.html |
+| 3   | SX1267 ESP32 LoRa                                                                                                       | ESP32    | https://micropython.org/download/ESP32_GENERIC/      | https://de.aliexpress.com/item/1005005967763162.html  |
 
 ## Flashing firmware
 Determine the appropriate setup script for your chip / board. Use the above board inventory for assistance.
